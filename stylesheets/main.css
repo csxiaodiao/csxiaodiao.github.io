@@ -2,7 +2,10 @@ body {
 padding-top: 50px;
 }
 .container{
-width: 750px;
+width: 800px;
+}
+.bg{
+    background: #eee;
 }
 .starter {
 background: #EEE;
