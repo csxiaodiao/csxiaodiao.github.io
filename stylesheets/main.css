@@ -1,0 +1,11 @@
+body {
+padding-top: 50px;
+}
+.container{
+width: 750px;
+}
+.starter {
+background: #EEE;
+padding: 40px;
+text-align: left;
+}
