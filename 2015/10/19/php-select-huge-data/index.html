@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: hexo | 小调的博客</title>
+  <title>php select huge data | 小调的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PHP &amp; Ruby on Rails">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小调的博客">
-<meta property="og:url" content="http://xiaodiao.me/tags/hexo/index.html">
+  <meta name="description" content="某些情况下查询大量数据，可能会出现超时或者内存溢出的情况。当在这样的场景下做查询的话，最简单的例子就是分开来做查询。
+####相关的环境变量12ini_set(&apos;memory_limit&apos;,&apos;256M&apos;); //设置内存大小set_time_limit (0); //设置超时时间
+###每次查询1000条1234567list($offset, $results) = [0, []]; $sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php select huge data">
+<meta property="og:url" content="http://xiaodiao.me/2015/10/19/php-select-huge-data/index.html">
 <meta property="og:site_name" content="小调的博客">
-<meta property="og:description" content="PHP &amp; Ruby on Rails">
+<meta property="og:description" content="某些情况下查询大量数据，可能会出现超时或者内存溢出的情况。当在这样的场景下做查询的话，最简单的例子就是分开来做查询。
+####相关的环境变量12ini_set(&apos;memory_limit&apos;,&apos;256M&apos;); //设置内存大小set_time_limit (0); //设置超时时间
+###每次查询1000条1234567list($offset, $results) = [0, []]; $sql">
+<meta property="og:updated_time" content="2015-10-19T15:56:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小调的博客">
-<meta name="twitter:description" content="PHP &amp; Ruby on Rails">
+<meta name="twitter:title" content="php select huge data">
+<meta name="twitter:description" content="某些情况下查询大量数据，可能会出现超时或者内存溢出的情况。当在这样的场景下做查询的话，最简单的例子就是分开来做查询。
+####相关的环境变量12ini_set(&apos;memory_limit&apos;,&apos;256M&apos;); //设置内存大小set_time_limit (0); //设置超时时间
+###每次查询1000条1234567list($offset, $results) = [0, []]; $sql">
   
     <link rel="alternative" href="/atom.xml" title="小调的博客" type="application/atom+xml">
   
@@ -173,57 +180,85 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-php-select-huge-data" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/14/hello-world/" class="archive-article-date">
-  	<time datetime="2015-10-14T13:51:53.000Z" itemprop="datePublished">10月 14</time>
+    <div class="article-meta">
+      <a href="/2015/10/19/php-select-huge-data/" class="article-date">
+  	<time datetime="2015-10-19T15:33:57.000Z" itemprop="datePublished">2015-10-19</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/14/hello-world/">Hello World</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php select huge data
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-blog/">github blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-	</div>
+        
 
-
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>某些情况下查询大量数据，可能会出现超时或者内存溢出的情况。<br>当在这样的场景下做查询的话，最简单的例子就是分开来做查询。</p>
+<p>####相关的环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ini_<span class="built_in">set</span>(<span class="string">'memory_limit'</span>,<span class="string">'256M'</span>); //设置内存大小</span><br><span class="line"><span class="built_in">set</span>_time_<span class="built_in">limit</span> (<span class="number">0</span>); //设置超时时间</span><br></pre></td></tr></table></figure></p>
+<p>###每次查询1000条<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list(<span class="variable">$offset</span>, <span class="variable">$results</span>) = [<span class="number">0</span>, []];</span><br><span class="line"> <span class="variable">$sql</span> = <span class="string">"select * from `table` limit &#123;$offset&#125;,1000"</span>;</span><br><span class="line"> <span class="keyword">while</span> (<span class="variable">$result</span> = <span class="variable">$this-</span>&gt;db-&gt;query(<span class="variable">$sql</span>)-&gt;result_array()) &#123;</span><br><span class="line">    <span class="variable">$offset</span> += <span class="number">4000</span>;         </span><br><span class="line">    <span class="variable">$results</span>[] = <span class="variable">$result</span>;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> <span class="variable">$results</span>;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
 
 </div>
       <footer id="footer">
@@ -249,9 +284,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
