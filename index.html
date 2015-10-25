@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/github-blog/" style="font-size: 10px;">github blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 10px;">php</a>
+						<a href="/tags/github-blog/" style="font-size: 10px;">github blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/preview-image/" style="font-size: 10px;">preview image</a>
 					</div>
 				</section>
 				
@@ -174,6 +174,67 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-php-preview-image" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/25/php-preview-image/" class="article-date">
+  	<time datetime="2015-10-25T14:56:25.000Z" itemprop="datePublished">2015-10-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/25/php-preview-image/">php preview image</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="PHP预览上传本地的图片">PHP预览上传本地的图片</h4><p>PHP 上传图片后跳到下个页面预览<br>这里用的是base64:URL，生成数据流<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$input</span>_images = get_preview_images($_FILES);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> get_preview_images(<span class="variable">$file</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$images</span> = array();</span><br><span class="line">    foreach (<span class="variable">$file</span> as <span class="variable">$number</span> =&gt; <span class="variable">$data</span>) &#123;</span><br><span class="line">        <span class="variable">$key</span> = explode(<span class="string">'_'</span>, <span class="variable">$number</span>)[<span class="number">2</span>];</span><br><span class="line">        if (! empty(<span class="variable">$data</span>[<span class="string">'tmp_name'</span>])) &#123;</span><br><span class="line">            <span class="variable">$mime</span> = getimagesize(<span class="variable">$data</span>[<span class="string">'tmp_name'</span>])[<span class="string">'mime'</span>];</span><br><span class="line">            <span class="variable">$images</span>[<span class="variable">$key</span>] = <span class="string">"data:&#123;$mime&#125;;base64,"</span> . base64_encode(file_get_contents(<span class="variable">$data</span>[<span class="string">'tmp_name'</span>]));</span><br><span class="line">        &#125; else&#123;</span><br><span class="line">            <span class="variable">$images</span>[<span class="variable">$key</span>] = null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return <span class="variable">$images</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>生成后的格式基本上就是这样的<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="typedef"><span class="keyword">data</span>:image/gif;base64,<span class="type">R0lGODlhBAABAIABAMLBwfLx8SH5BAEAAAEALAAAAADEFAAEAAAICRF4AOw</span>==</span></span><br></pre></td></tr></table></figure></p>
+<p>注：貌似图片不能超过10M，浏览器对data url的长度有限制</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/preview-image/">preview image</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/PHP/">PHP</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-php-select-huge-data" class="article article-type-post" itemscope itemprop="blogPost">
   
