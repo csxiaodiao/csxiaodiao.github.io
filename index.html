@@ -363,7 +363,7 @@
 </ol>
 <hr>
 <h2 id="输出出现在HTML标签的属性之中。">输出出现在HTML标签的属性之中。</h2><p>如果这里的word没过滤双引号。就会有以下的情况发生。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">URL: http:<span class="comment">//xxxx.com/search.php?word=乌云欢迎您" onclick="alert(1)</span></span><br><span class="line">html: <span class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"乌云欢迎您"</span> <span class="attribute">onclick</span>=<span class="value">"alert(1)"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>== 解决方案: 将双引号 <code>&quot;</code> 过滤为实体字符 <code>&amp;quot;</code> ==</p>
+<p>解决方案: 将双引号 <code>&quot;</code> 过滤为实体字符 <code>&amp;quot;</code></p>
 <p>但是过滤成实体字符后，依然可以继续XSS。</p>
 <p>没过滤 <code>\</code> 的情况下,在css中，允许使用转义字符, <code>\ + ascii16进制</code>形式。<br>例如过滤了expression, 我们也可以轻松的用expr\65ssion绕过。<br>未完待续……</p>
 <hr>
