@@ -3,17 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: php | 小调的博客</title>
+  <title>ssh 端口转发 | 小调的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PHP &amp; Ruby on Rails">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小调的博客">
-<meta property="og:url" content="http://xiaodiao.me/tags/php/index.html">
+  <meta name="description" content="##远程服务器 转发到本地
+
+ssh -C -f -N -g -R 9999(监听远程服务器上的端口):localhost:3000(本地端口) deploy@远程ip地址需要添加 GatewayPorts yes &amp;gt;&amp;gt;&amp;gt; /etc/ssh/sshd_config
+
+##各个参数
+
+L 将本地机(客户机)的某个端口转发到远端指定机器的指定端口 port:host:hostport">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ssh 端口转发">
+<meta property="og:url" content="http://xiaodiao.me/2016/02/16/ssh-端口转发/index.html">
 <meta property="og:site_name" content="小调的博客">
-<meta property="og:description" content="PHP &amp; Ruby on Rails">
+<meta property="og:description" content="##远程服务器 转发到本地
+
+ssh -C -f -N -g -R 9999(监听远程服务器上的端口):localhost:3000(本地端口) deploy@远程ip地址需要添加 GatewayPorts yes &amp;gt;&amp;gt;&amp;gt; /etc/ssh/sshd_config
+
+##各个参数
+
+L 将本地机(客户机)的某个端口转发到远端指定机器的指定端口 port:host:hostport">
+<meta property="og:updated_time" content="2016-02-16T03:42:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小调的博客">
-<meta name="twitter:description" content="PHP &amp; Ruby on Rails">
+<meta name="twitter:title" content="ssh 端口转发">
+<meta name="twitter:description" content="##远程服务器 转发到本地
+
+ssh -C -f -N -g -R 9999(监听远程服务器上的端口):localhost:3000(本地端口) deploy@远程ip地址需要添加 GatewayPorts yes &amp;gt;&amp;gt;&amp;gt; /etc/ssh/sshd_config
+
+##各个参数
+
+L 将本地机(客户机)的某个端口转发到远端指定机器的指定端口 port:host:hostport">
   
     <link rel="alternative" href="/atom.xml" title="小调的博客" type="application/atom+xml">
   
@@ -173,57 +192,107 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-ssh-端口转发" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/19/php-select-huge-data/" class="archive-article-date">
-  	<time datetime="2015-10-19T15:33:57.000Z" itemprop="datePublished">10月 19</time>
+    <div class="article-meta">
+      <a href="/2016/02/16/ssh-端口转发/" class="article-date">
+  	<time datetime="2016-02-16T03:29:51.000Z" itemprop="datePublished">2016-02-16</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/19/php-select-huge-data/">PHP如何查询大量数据</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ssh 端口转发
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh-wechat/">ssh wechat</a></li></ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/PHP/">PHP</a>
-	</div>
+        
 
-
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##远程服务器 转发到本地</p>
+<blockquote>
+<p>ssh -C -f -N -g -R 9999(监听远程服务器上的端口):localhost:3000(本地端口) deploy@远程ip地址<br>需要添加 GatewayPorts yes &gt;&gt;&gt; /etc/ssh/sshd_config</p>
+</blockquote>
+<p>##各个参数</p>
+<ul>
+<li>L 将本地机(客户机)的某个端口转发到远端指定机器的指定端口 port:host:hostport</li>
+<li>R 将远程主机(服务器)的某个端口转发到本地端指定机器的指定端口 port:host:hostport</li>
+<li>D 指定一个本地机器 “动态的’’ 应用程序端口转发 port</li>
+<li>C Enable compression 压缩数据传输。</li>
+<li>f Fork into background after authentication. 后台认证用户/密码，通常和-N连用，不用登录到远程主机。</li>
+<li>N Do not execute a shell or command 不执行脚本或命令，通常与-f连用。</li>
+<li>g Allow remote hosts to connect to forwarded ports. 在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。</li>
+<li>p port Connect to this port. Server must be on the same port. 被登录的ssd服务器的sshd服务端口，省略就是默认的22端口。</li>
+</ul>
+<ul>
+<li>netstat -anp | grep 9999</li>
+<li>kill -9 4567</li>
+<li>kill <code>ps -u deploy | grep sshd | awk &#39;{print $1}&#39;</code></li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.xushulong.com/ssh-tunnel/" target="_blank" rel="external">ssh</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/" target="_blank" rel="external">ssh</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/16/ubuntu-触摸板点击配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu 触摸板点击配置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
 
 </div>
       <footer id="footer">
@@ -261,9 +330,9 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

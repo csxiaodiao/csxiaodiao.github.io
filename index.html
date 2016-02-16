@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/github-blog/" style="font-size: 10px;">github blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mailer/" style="font-size: 10px;">mailer</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/preview-image/" style="font-size: 10px;">preview image</a> <a href="/tags/qq/" style="font-size: 10px;">qq</a> <a href="/tags/sublime-license/" style="font-size: 10px;">sublime license</a>
+						<a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/github-blog/" style="font-size: 10px;">github blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mailer/" style="font-size: 10px;">mailer</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/preview-image/" style="font-size: 10px;">preview image</a> <a href="/tags/qq/" style="font-size: 10px;">qq</a> <a href="/tags/ssh-wechat/" style="font-size: 10px;">ssh wechat</a> <a href="/tags/sublime-license/" style="font-size: 10px;">sublime license</a> <a href="/tags/ubuntu-touchpad/" style="font-size: 10px;">ubuntu touchpad</a>
 					</div>
 				</section>
 				
@@ -174,6 +174,228 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-ssh-端口转发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/16/ssh-端口转发/" class="article-date">
+  	<time datetime="2016-02-16T03:29:51.000Z" itemprop="datePublished">2016-02-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/16/ssh-端口转发/">ssh 端口转发</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##远程服务器 转发到本地</p>
+<blockquote>
+<p>ssh -C -f -N -g -R 9999(监听远程服务器上的端口):localhost:3000(本地端口) deploy@远程ip地址<br>需要添加 GatewayPorts yes &gt;&gt;&gt; /etc/ssh/sshd_config</p>
+</blockquote>
+<p>##各个参数</p>
+<ul>
+<li>L 将本地机(客户机)的某个端口转发到远端指定机器的指定端口 port:host:hostport</li>
+<li>R 将远程主机(服务器)的某个端口转发到本地端指定机器的指定端口 port:host:hostport</li>
+<li>D 指定一个本地机器 “动态的’’ 应用程序端口转发 port</li>
+<li>C Enable compression 压缩数据传输。</li>
+<li>f Fork into background after authentication. 后台认证用户/密码，通常和-N连用，不用登录到远程主机。</li>
+<li>N Do not execute a shell or command 不执行脚本或命令，通常与-f连用。</li>
+<li>g Allow remote hosts to connect to forwarded ports. 在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。</li>
+<li>p port Connect to this port. Server must be on the same port. 被登录的ssd服务器的sshd服务端口，省略就是默认的22端口。</li>
+</ul>
+<ul>
+<li>netstat -anp | grep 9999</li>
+<li>kill -9 4567</li>
+<li>kill <code>ps -u deploy | grep sshd | awk &#39;{print $1}&#39;</code></li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.xushulong.com/ssh-tunnel/" target="_blank" rel="external">ssh</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/" target="_blank" rel="external">ssh</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh-wechat/">ssh wechat</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-ubuntu-触摸板点击配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/16/ubuntu-触摸板点击配置/" class="article-date">
+  	<time datetime="2016-02-16T03:03:40.000Z" itemprop="datePublished">2016-02-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/16/ubuntu-触摸板点击配置/">ubuntu 触摸板点击配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>如何修改ubuntu触摸板默认配置</li>
+</ul>
+<hr>
+<pre><code>关键是修改tapbutton1、tapbutton2、tapbutton3变量来设置。
+默认设置：
+  tapbutton1=<span class="number">1</span>        <span class="preprocessor">#单指点击模拟鼠标左键</span>
+  tapbutton2=<span class="number">3</span>        <span class="preprocessor">#双指点击模拟鼠标右键</span>
+  tapbutton3=<span class="number">2</span>        <span class="preprocessor">#三指点击模拟鼠标中键</span>
+</code></pre><p>因此在终端下输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ synclient TapButton1 = <span class="number">1</span></span><br><span class="line">$ synclient TapButton2 = <span class="number">2</span></span><br><span class="line">$ synclient TapButton3 = <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>但是有个重启后会失效，下面通过修改配置文件的方法来修改设置。</p>
+<ol>
+<li>修改gnome设置防止覆盖现有的设置<blockquote>
+<p>$ gsettings set org.gnome.settings-daemon.plugins.mouse active false</p>
+</blockquote>
+</li>
+<li>修改touchpad配置文件<blockquote>
+<p>$ sudo gedit /usr/share/X11/xorg.conf.d/50-synaptics.conf</p>
+</blockquote>
+</li>
+</ol>
+<p>参考链接:<br><a href="http://askubuntu.com/questions/130393/how-to-configure-the-touchpad-middle-click" target="_blank" rel="external">how-to-configure-the-touchpad-middle-click?</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu-touchpad/">ubuntu touchpad</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-guides-xss" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/15/guides-xss/" class="article-date">
+  	<time datetime="2016-02-15T15:04:35.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/guides-xss/">Guides XSS 笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>XSS的存在，一定是伴随着输入，与输出2个概念的。</li>
+<li>要想过滤掉XSS，你可以在输入层面过滤，也可以在输出层面过滤。</li>
+</ol>
+<hr>
+<h2 id="输出出现在HTML标签的属性之中。">输出出现在HTML标签的属性之中。</h2><p>如果这里的word没过滤双引号。就会有以下的情况发生。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">URL: http:<span class="comment">//xxxx.com/search.php?word=乌云欢迎您" onclick="alert(1)</span></span><br><span class="line">html: <span class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"乌云欢迎您"</span> <span class="attribute">onclick</span>=<span class="value">"alert(1)"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>== 解决方案: 将双引号 <code>&quot;</code> 过滤为实体字符 <code>&amp;quot;</code> ==</p>
+<p>但是过滤成实体字符后，依然可以继续XSS。</p>
+<p>没过滤 <code>\</code> 的情况下,在css中，允许使用转义字符, <code>\ + ascii16进制</code>形式。<br>例如过滤了expression, 我们也可以轻松的用expr\65ssion绕过。<br>未完待续……</p>
+<hr>
+<hr>
+<hr>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-sublime-universal-license-keys" class="article article-type-post" itemscope itemprop="blogPost">
   

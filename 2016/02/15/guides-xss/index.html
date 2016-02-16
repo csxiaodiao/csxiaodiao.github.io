@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: php | 小调的博客</title>
+  <title>Guides XSS 笔记 | 小调的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PHP &amp; Ruby on Rails">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小调的博客">
-<meta property="og:url" content="http://xiaodiao.me/tags/php/index.html">
+  <meta name="description" content="XSS的存在，一定是伴随着输入，与输出2个概念的。
+要想过滤掉XSS，你可以在输入层面过滤，也可以在输出层面过滤。
+
+
+输出出现在HTML标签的属性之中。如果这里的word没过滤双引号。就会有以下的情况发生。12URL: http://xxxx.com/search.php?word=乌云欢迎您&quot; onclick=&quot;alert(1)html: &amp;lt;input type=&quot;text&quot; value">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guides XSS 笔记">
+<meta property="og:url" content="http://xiaodiao.me/2016/02/15/guides-xss/index.html">
 <meta property="og:site_name" content="小调的博客">
-<meta property="og:description" content="PHP &amp; Ruby on Rails">
+<meta property="og:description" content="XSS的存在，一定是伴随着输入，与输出2个概念的。
+要想过滤掉XSS，你可以在输入层面过滤，也可以在输出层面过滤。
+
+
+输出出现在HTML标签的属性之中。如果这里的word没过滤双引号。就会有以下的情况发生。12URL: http://xxxx.com/search.php?word=乌云欢迎您&quot; onclick=&quot;alert(1)html: &amp;lt;input type=&quot;text&quot; value">
+<meta property="og:updated_time" content="2016-02-16T03:37:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小调的博客">
-<meta name="twitter:description" content="PHP &amp; Ruby on Rails">
+<meta name="twitter:title" content="Guides XSS 笔记">
+<meta name="twitter:description" content="XSS的存在，一定是伴随着输入，与输出2个概念的。
+要想过滤掉XSS，你可以在输入层面过滤，也可以在输出层面过滤。
+
+
+输出出现在HTML标签的属性之中。如果这里的word没过滤双引号。就会有以下的情况发生。12URL: http://xxxx.com/search.php?word=乌云欢迎您&quot; onclick=&quot;alert(1)html: &amp;lt;input type=&quot;text&quot; value">
   
     <link rel="alternative" href="/atom.xml" title="小调的博客" type="application/atom+xml">
   
@@ -173,57 +186,103 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-guides-xss" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/19/php-select-huge-data/" class="archive-article-date">
-  	<time datetime="2015-10-19T15:33:57.000Z" itemprop="datePublished">10月 19</time>
+    <div class="article-meta">
+      <a href="/2016/02/15/guides-xss/" class="article-date">
+  	<time datetime="2016-02-15T15:04:35.000Z" itemprop="datePublished">2016-02-15</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/19/php-select-huge-data/">PHP如何查询大量数据</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Guides XSS 笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XSS/">XSS</a></li></ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/PHP/">PHP</a>
-	</div>
+        
 
-
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>XSS的存在，一定是伴随着输入，与输出2个概念的。</li>
+<li>要想过滤掉XSS，你可以在输入层面过滤，也可以在输出层面过滤。</li>
+</ol>
+<hr>
+<h2 id="输出出现在HTML标签的属性之中。">输出出现在HTML标签的属性之中。</h2><p>如果这里的word没过滤双引号。就会有以下的情况发生。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">URL: http:<span class="comment">//xxxx.com/search.php?word=乌云欢迎您" onclick="alert(1)</span></span><br><span class="line">html: <span class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"乌云欢迎您"</span> <span class="attribute">onclick</span>=<span class="value">"alert(1)"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>== 解决方案: 将双引号 <code>&quot;</code> 过滤为实体字符 <code>&amp;quot;</code> ==</p>
+<p>但是过滤成实体字符后，依然可以继续XSS。</p>
+<p>没过滤 <code>\</code> 的情况下,在css中，允许使用转义字符, <code>\ + ascii16进制</code>形式。<br>例如过滤了expression, 我们也可以轻松的用expr\65ssion绕过。<br>未完待续……</p>
+<hr>
+<hr>
+<hr>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/16/ubuntu-触摸板点击配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ubuntu 触摸板点击配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/14/sublime-universal-license-keys/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sublime universal license keys</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
 
 </div>
       <footer id="footer">
@@ -261,9 +320,9 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
